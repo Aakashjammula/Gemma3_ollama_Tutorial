@@ -12,7 +12,7 @@ This tutorial demonstrates how to use the new Gemma3 model for various generativ
 ## Installation
 Ensure you have Python installed, then install the required dependencies:
 ```bash
-pip install gradio langchain_ollama langchain_chroma langchain_core langchain_community langchain_text_splitters pillow base64
+pip install gradio langchain_ollama langchain_chroma langchain_core langchain_community langchain_text_splitters pillow
 ```
 
 ## Project Files
@@ -21,7 +21,25 @@ pip install gradio langchain_ollama langchain_chroma langchain_core langchain_co
 
 ## Usage
 
-### 1. RAG-based PDF Querying (`gemma3_rag.py`)
+### 1. OCR and AI Chat (`gemma3_ocr.py`)
+This script allows users to chat with the AI using text and images.
+
+#### Steps:
+1. Run the script:
+   ```bash
+   python gemma3_ocr.py
+   ```
+2. Enter a message and optionally upload an image.
+3. Get AI-generated responses based on text and visual inputs.
+
+#### Features:
+- Image-to-text conversion with base64 encoding.
+- Chatting with AI using `gemma3:4b`.
+- Gradio interface for easy interaction.
+
+![Gemma OCR Interface](images/ocr.png)
+
+### 2. RAG-based PDF Querying (`gemma3_rag.py`)
 This script processes PDFs, stores them in a vector database, and allows users to query them using `gemma3:4b`.
 
 #### Steps:
@@ -37,21 +55,9 @@ This script processes PDFs, stores them in a vector database, and allows users t
 - Vector search using `Chroma`.
 - AI-powered question-answering with `gemma3:4b`.
 
-### 2. OCR and AI Chat (`gemma3_ocr.py`)
-This script allows users to chat with the AI using text and images.
+![PDF to Knowledge Base Interface](images/pdf_to_kb.png)
 
-#### Steps:
-1. Run the script:
-   ```bash
-   python gemma3_ocr.py
-   ```
-2. Enter a message and optionally upload an image.
-3. Get AI-generated responses based on text and visual inputs.
-
-#### Features:
-- Image-to-text conversion with base64 encoding.
-- Chatting with AI using `gemma3:4b`.
-- Gradio interface for easy interaction.
+![Ask RAG Bot Based on PDF](images/rag.png)
 
 ## Deployment
 Both applications use Gradio for the user interface. The scripts can be deployed on local machines or cloud platforms.
